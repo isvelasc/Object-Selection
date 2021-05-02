@@ -26,9 +26,7 @@ public class PlayerController : MonoBehaviour
             * Use boxraycast from selected object to check surroundings, adjust to surroundings appropriately (optional, turn rigidbody off while 
                 in selection mode to ensure no collision between objects and get funky interactions)
             * Check on release there is no overlapping (use physics compute penetration)
-            * Add snapping to grid (drop object if object is moved beyond certain point)
-              - check with isGrounded
-              - Currently is not responsive
+            
      */
 
     
@@ -47,6 +45,8 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
+    // Add offset to be able to use Raycast from FP-View or add logic to ObjectController to use Raycast
     void MoveObject()
     {
         RaycastHit hit;
