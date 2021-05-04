@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public bool hasObject;
 
     float objectSize;
+    public bool inGrid;
 
     [Header("Ground Detection")]
     [SerializeField] LayerMask groundMask;
@@ -69,6 +70,12 @@ public class PlayerController : MonoBehaviour
                         objectGrabbed = hit.transform.gameObject.GetComponent<ObjectController>();
                         objectSize = objectGrabbed.GetComponent<Renderer>().bounds.size.magnitude;
                         hasObject = true;
+                        objectGrabbed.placed = false;
+                        objectGrabbed.GetComponent<Rigidbody>().useGravity = false;
+                        if (inGrid)
+                        {
+                            objectGrabbed.inGrid = true;
+                        }
                     }
                 }
             }
