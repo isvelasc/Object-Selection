@@ -76,7 +76,6 @@ public class ObjectController : MonoBehaviour
         var vec = transform.eulerAngles;
         vec.x = 0f;
         vec.y = Mathf.Round(transform.eulerAngles.y / 90) * 90;
-        Debug.Log("Vec y: " + vec.y);
         vec.z = 0f;
 
         if (vec.y == 0 || vec.y == 180 || vec.y == 360)
@@ -96,6 +95,9 @@ public class ObjectController : MonoBehaviour
             0.1f,
             Mathf.Round(transform.position.z) + z_offset
             );
+
+        Debug.Log("X Position: " + (Mathf.Round(transform.position.x) + x_offset));
+        Debug.Log("Z Position: " + (Mathf.Round(transform.position.z) + z_offset));
 
         if (!isHolding)
         {
